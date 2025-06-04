@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page with Hyperlinks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: darkblue;
+        }
+
+        nav {
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Sample Page</h1>
+    </header>
+
+    <nav>
+        <h2>Navigation Links</h2>
+        <a href="https://www.google.com" target="_blank">Google</a>
+        <a href="https://www.wikipedia.org" target="_blank">Wikipedia</a>
+        <a href="https://www.github.com" target="_blank">GitHub</a>
+    </nav>
+
+    <main>
+        <h2>About This Page</h2>
+        <p>This is a simple sample HTML page demonstrating how to add hyperlinks.</p>
+        <p>Hyperlinks can be used to navigate to:</p>
+        <ul>
+            <li>External websites (e.g., <a href="https://www.google.com" target="_blank">Google</a>)</li>
+            <li>Other sections of the same page</li>
+            <li>Files or documents</li>
+        </ul>
+        <h2>Jump to Section</h2>
+        <p><a href="#footer">Click here to go to the footer</a></p>
+    </main>
+
+    <footer id="footer">
+        <p>&copy; 2024 Sample Page. All rights reserved.</p>
+        <p>Return to <a href="#top">top</a>.</p>
+    </footer>
+</body>
+</html>

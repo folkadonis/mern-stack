@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Description Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <!-- Main Container -->
+  <div class="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-md mt-10">
+    <!-- Product Section -->
+    <div class="flex flex-col md:flex-row items-center">
+      <!-- Product Image -->
+      <div class="md:w-1/2">
+        <img src="https://via.placeholder.com/400" alt="Product Image" class="rounded-md shadow-md w-full">
+      </div>
+      <!-- Product Details -->
+      <div class="md:w-1/2 md:ml-6">
+        <h1 class="text-3xl font-bold text-gray-800">Product Name</h1>
+        <p class="mt-4 text-gray-600">This is a brief description of the product. It highlights key features and benefits.</p>
+        <p class="mt-4 text-2xl font-semibold text-blue-600">$49.99</p>
+        <button class="mt-6 px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Review Section -->
+    <div class="mt-10">
+      <h2 class="text-2xl font-bold text-gray-800">Customer Reviews</h2>
+      
+      <!-- Average Rating -->
+      <div class="mt-4">
+        <p class="text-lg font-semibold">Average Rating: 
+          <span class="text-yellow-500">4.5/5</span>
+        </p>
+      </div>
+      
+      <!-- Add Review -->
+      <div class="mt-6">
+        <form>
+          <label for="review" class="block text-sm font-medium text-gray-700">Write a Review</label>
+          <textarea id="review" rows="3" class="w-full p-2 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Share your thoughts about this product..."></textarea>
+          
+          <label for="rating" class="block mt-4 text-sm font-medium text-gray-700">Rating</label>
+          <select id="rating" class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <option value="1">1 - Poor</option>
+            <option value="2">2 - Fair</option>
+            <option value="3">3 - Good</option>
+            <option value="4">4 - Very Good</option>
+            <option value="5">5 - Excellent</option>
+          </select>
+          
+          <button type="submit" class="mt-4 px-6 py-2 bg-green-500 text-white rounded-md hover:bg-green-600">Submit Review</button>
+        </form>
+      </div>
+
+      <!-- Reviews List -->
+      <div class="mt-8 max-h-60 overflow-y-scroll">
+        <div class="border-t border-gray-200 pt-4">
+          <p class="text-sm text-gray-800"><span class="font-semibold">User 1:</span> Great product! Totally worth the price. <span class="text-yellow-500">★★★★★</span></p>
+        </div>
+        <div class="border-t border-gray-200 pt-4">
+          <p class="text-sm text-gray-800"><span class="font-semibold">User 2:</span> Decent quality, but shipping was slow. <span class="text-yellow-500">★★★☆☆</span></p>
+        </div>
+        <div class="border-t border-gray-200 pt-4">
+          <p class="text-sm text-gray-800"><span class="font-semibold">User 3:</span> Loved it! Will buy again. <span class="text-yellow-500">★★★★★</span></p>
+        </div>
+        <!-- Add more reviews as needed -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>
