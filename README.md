@@ -1,2 +1,0 @@
-# mern-stack
-sample
