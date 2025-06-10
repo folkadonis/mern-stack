@@ -20,17 +20,10 @@
 </head>
 <body>
   <h1>Your Cart</h1>
-  <div class="item">
-    <p>Product 1 - ₹500</p>
-    <button>Remove</button>
-  </div>
-  <div class="item">
-    <p>Product 2 - ₹999</p>
-    <button>Remove</button>
-  </div>
-  <p><strong>Total:</strong> ₹1499</p>
-  <button>Checkout</button>
+  <div id="cart-items"></div>
   <br><br>
   <a href="index.html">Back to Home</a>
+  <script src="script.js"></script>
+  <script>window.onload = displayCart;</script>
 </body>
 </html>

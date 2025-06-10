@@ -19,18 +19,19 @@
       border-radius: 8px;
     }
   </style>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <h1>Products</h1>
   <div class="product">
     <h3>Product 1</h3>
     <p>Price: ₹500</p>
-    <button>Add to Cart</button>
+    <button onclick="addToCart('Product 1', 500)">Add to Cart</button>
   </div>
   <div class="product">
     <h3>Product 2</h3>
     <p>Price: ₹999</p>
-    <button>Add to Cart</button>
+    <button onclick="addToCart('Product 2', 999)">Add to Cart</button>
   </div>
   <a href="index.html">Back to Home</a>
 </body>
