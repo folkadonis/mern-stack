@@ -43,3 +43,51 @@ function removeFromCart(index) {
   localStorage.setItem("cart", JSON.stringify(cart));
   displayCart();
 }
+
+function checkout() {
+  if (cart.length === 0) return alert("Cart is empty!");
+
+  const timestamp = new Date().toLocaleString();
+  const order = {
+    id: Date.now(),
+    items: [...cart], // Deep copy
+    total: cart.reduce((sum, p) => sum + p.price * p.quantity, 0),
+    date: timestamp,
+  };
+
+  orders.push(order);
+  saveOrders();
+
+  cart = [];
+  saveCart();
+
+  alert("Order placed successfully!");
+  window.location.href = "orders.html";
+}
+
+
+function displayOrders() {
+  const container = document.getElementById("orders-list");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  if (orders.length === 0) {
+    container.innerHTML = "<p>No orders yet.</p>";
+    return;
+  }
+
+  orders.forEach(order => {
+    const div = document.createElement("div");
+    div.className = "order";
+    div.innerHTML = `
+      <h3>Order #${order.id}</h3>
+      <p>Date: ${order.date}</p>
+      <p>Total: ₹${order.total}</p>
+      <ul>
+        ${order.items.map(item => `<li>${item.productName} × ${item.quantity}</li>`).join("")}
+      </ul>
+    `;
+    container.appendChild(div);
+  });
+}
