@@ -18,23 +18,26 @@
       padding: 15px;
       border-radius: 8px;
     }
+    #order-message {
+      color: green;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
   </style>
 </head>
 <body>
   <h1>Order History</h1>
-  <div class="order">
-    <p><strong>Order #1234</strong></p>
-    <p>Items: Product 1, Product 2</p>
-    <p>Total: ₹1499</p>
-    <p>Status: Delivered</p>
-  </div>
-  <div class="order">
-    <p><strong>Order #5678</strong></p>
-    <p>Items: Product 3</p>
-    <p>Total: ₹750</p>
-    <p>Status: Shipped</p>
-  </div>
+  <div id="order-message"></div>
+  <div id="orders-list"></div>
   <a href="index.html">Back to Home</a>
+
   <script src="script.js"></script>
+  <script>
+    if (localStorage.getItem("orderPlaced") === "true") {
+      document.getElementById("order-message").textContent = "Order placed successfully!";
+      localStorage.removeItem("orderPlaced");
+    }
+    window.onload = displayOrders;
+  </script>
 </body>
 </html>
