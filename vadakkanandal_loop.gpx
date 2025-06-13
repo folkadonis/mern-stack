@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<gpx version="1.1" creator="ChatGPT">
+  <metadata>
+    <name>Vadakkanandal–Kalvarayan Loop (with Timestamps and Heart Rate)</name>
+    <time>2025-06-09T06:00:00Z</time><!-- Start time -->
+  </metadata>
+
+  <trk>
+    <name>Vadakkanandal Loop</name>
+    <trkseg>
+
+      <trkpt lat="11.7380" lon="78.9620">
+        <ele>100</ele>
+        <time>2025-06-09T06:00:00Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>145</gpxtpx:hr><!-- Mock Heart Rate -->
+          </gpxtpx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+
+      <trkpt lat="11.8000" lon="78.9000">
+        <ele>200</ele>
+        <time>2025-06-09T06:30:00Z</time><!-- 30 minutes later -->
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>150</gpxtpx:hr><!-- Mock Heart Rate -->
+          </gpxtpx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+
+      <trkpt lat="11.9500" lon="78.8000">
+        <ele>1000</ele><!-- Summit -->
+        <time>2025-06-09T07:30:00Z</time><!-- 1 hour later -->
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>160</gpxtpx:hr><!-- Mock Heart Rate -->
+          </gpxtpx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+
+      <trkpt lat="11.7000" lon="78.7000">
+        <ele>500</ele><!-- Sankarapuram -->
+        <time>2025-06-09T09:00:00Z</time><!-- 1.5 hours later -->
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>140</gpxtpx:hr><!-- Mock Heart Rate -->
+          </gpxtpx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+
+      <trkpt lat="11.7400" lon="78.9000">
+        <ele>250</ele><!-- Kallakurichi -->
+        <time>2025-06-09T10:30:00Z</time><!-- 1.5 hours later -->
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>135</gpxtpx:hr><!-- Mock Heart Rate -->
+          </gpxtpx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+
+      <trkpt lat="11.7600" lon="78.9500">
+        <ele>200</ele><!-- Approach Vadakkanandal -->
+        <time>2025-06-09T11:30:00Z</time><!-- 1 hour later -->
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>130</gpxtpx:hr><!-- Mock Heart Rate -->
+          </gpxtpx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+
+      <trkpt lat="11.7380" lon="78.9620">
+        <ele>100</ele><!-- Finish -->
+        <time>2025-06-09T12:00:00Z</time><!-- 30 minutes later -->
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>120</gpxtpx:hr><!-- Mock Heart Rate -->
+          </gpxtpx:TrackPointExtension>
+        </extensions>
+      </trkpt>
+
+    </trkseg>
+  </trk>
+</gpx>
