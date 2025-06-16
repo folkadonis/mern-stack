@@ -174,18 +174,19 @@
     </div>
   </section>
   <script>
-    document.querySelector('form').addEventListener('submit',function(e){
-    const name=this.elements.name.value;
-    const email=this.elements.email.value;
-    const gender=this.elements.gender.value;
-    const counrty=this.elements.counrty.value;
-    const message=this.elements.message.value;
-
-    alert(
-      'Name: ${name}\nEmail: ${email}\nGender: ${gender}\nCountry: ${country}\nMessage: ${message}'
-    );
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+  
+      const name = this.elements.name.value;
+      const email = this.elements.email.value;
+      const gender = this.elements.gender.value;
+      const country = this.elements.country.value;
+      const message = this.elements.message.value;
+  
+      alert(
+        `Name: ${name}\nEmail: ${email}\nGender: ${gender}\nCountry: ${country}\nMessage: ${message}`
+      );
     });
- 
   </script>
   </body>
 
