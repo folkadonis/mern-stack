@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login and signup page</title>
+<style>
+    body{
+        font-family:Arial, Helvetica, sans-serif;
+        margin: 20px;
+    }
+    .container{
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #000;
+        border-radius: 10px;
+        background: #f5f5f5;
+    }
+    input{
+        display: block;
+        margin-bottom: 15px;
+        width: 100%;
+        padding: 10px;
+    }
+    button{
+        width: 100%;
+        padding: 10px;
+        background: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+    }
+    button:hover{
+        background: #0056b3;
+    }
+    p{
+        color:red;
+    }
+</style>
+</head>
+<body>
+    <h1>Login /signup</h1>
+    <div class="container">
+        <h2>Signup</h2>
+        <input id="signupusername" placeholder="Username">
+        <input id="signuppassword" type="password" placeholder="Password">
+        <button id="signupbtn">Signup</button>
+        <p id="signupmessage"></p>
+        
+    </div>
+    <br>
+    <div class="container">
+        <h2>Login</h2>
+        <input id="loginusername" placeholder="Username">
+        <input id="loginpassword" type="password" placeholder="Password">
+        <button id="loginbtn">Signup</button>
+        <p id="loginmessage"></p>
+        
+    </div>
+    <script>
+        document.getElementById('signupbtn').addEventListener('click',()=>{
+            const Username=document.getElementById('signupusername').value.trim();
+            const password=document.getElementById('signuppassword').value.trim();
+       if(Username && password){
+        if(localStorage.getItem(Username)){
+            document.getElementById('signupmessage').innerText="user already exists.";
+        }
+        else{
+            localStorage.setItem(Username,password);
+            
+            document.getElementById('signupmessage').innerText="signup sucessful";
+            document.getElementById('signupusername').value='';
+            document.getElementById('signuppassword').value='';
+        }
+       }
+       else{
+        document.getElementById('signupmessage').innerText="please fill all the feilds.";
+            
+       }
+        });
+    </script>
+</body>
+</html>

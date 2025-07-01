@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - ToDo</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    input, button { margin: 5px; padding: 10px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 10px; }
+  </style>
+</head>
+<body>
+  <h2>Welcome, <span id="user"></span>!</h2>
+  <button onclick="logout()">Logout</button><br><br>
+  <input id="taskInput" placeholder="Enter task">
+  <button onclick="addTask()">Add</button>
+  <button onclick="fetchTasks()">View All</button>
+
+  <table id="taskTable" style="display:none;">
+    <thead>
+      <tr><th>Task</th><th>Status</th><th>Toggle</th><th>Delete</th></tr>
+    </thead>
+    <tbody id="taskBody"></tbody>
+  </table>
+
+  <script>
+    const username = sessionStorage.getItem('username');
+    if (!username) {
+      alert("Please log in first.");
+      window.location.href = '/index.html';
+    }
+
+    document.getElementById('user').textContent = username;
+
+    async function addTask() {
+      const text = document.getElementById('taskInput').value;
+      if (!text) return alert('Task cannot be empty');
+
+      await fetch('/tasks', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, text })
+      });
+
+      document.getElementById('taskInput').value = '';
+      fetchTasks();
+    }
+
+    async function fetchTasks() {
+      const res = await fetch(`/tasks/${username}`);
+      const tasks = await res.json();
+      const body = document.getElementById('taskBody');
+      const table = document.getElementById('taskTable');
+
+      body.innerHTML = '';
+      table.style.display = 'table';
+
+      tasks.forEach(task => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${task.text}</td>
+          <td>${task.completed ? '✅ Done' : '❌ Pending'}</td>
+          <td><button onclick="toggleStatus('${task._id}', ${!task.completed})">Toggle</button></td>
+          <td><button onclick="deleteTask('${task._id}')">Delete</button></td>
+        `;
+        body.appendChild(row);
+      });
+    }
+
+    async function toggleStatus(id, completed) {
+      await fetch(`/tasks/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ completed })
+      });
+      fetchTasks();
+    }
+
+    async function deleteTask(id) {
+      await fetch(`/tasks/${id}`, { method: 'DELETE' });
+      fetchTasks();
+    }
+
+    function logout() {
+      sessionStorage.clear();
+      window.location.href = '/index.html';
+    }
+  </script>
+</body>
+</html>
